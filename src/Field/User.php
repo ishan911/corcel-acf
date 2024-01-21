@@ -13,12 +13,12 @@ use Corcel\Model\Post;
 class User extends BasicField implements FieldInterface
 {
     /**
-     * @var \Corcel\Model\User
+     * @var \Corcel\User
      */
     protected $user;
 
     /**
-     * @var \Corcel\Model\User
+     * @var \Corcel\User
      */
     protected $value;
 
@@ -28,7 +28,7 @@ class User extends BasicField implements FieldInterface
     public function __construct(Post $post)
     {
         parent::__construct($post);
-        $this->user = new \Corcel\Model\User();
+        $this->user = new \Corcel\User();
         $this->user->setConnection($post->getConnectionName());
     }
 
@@ -42,7 +42,7 @@ class User extends BasicField implements FieldInterface
     }
 
     /**
-     * @return \Corcel\Model\User
+     * @return \Corcel\User
      */
     public function get()
     {
