@@ -1,6 +1,6 @@
 {
   "name": "corcel/acf",
-  "description": "Advanced Custom Field (ACF) plugin for Corcel",
+  "description": "Advanced Custom Field (ACF) plugin for Corcel. Added php 8 support",
   "homepage": "http://github.com/corcel/acf",
   "license": "MIT",
   "authors": [
