@@ -4,11 +4,9 @@ namespace Corcel\Acf\Field;
 
 use Corcel\Model\Post;
 use Corcel\Model;
-use Corcel\Model\Meta\PostMeta;
-use Corcel\Model\Term;
-use Corcel\Model\Meta\TermMeta;
-use Corcel\Model\User;
-use Corcel\Model\Meta\UserMeta;
+use Corcel\PostMeta;
+use Corcel\Term;
+use Corcel\TermMeta;
 
 /**
  * Class BasicField.
@@ -65,8 +63,6 @@ abstract class BasicField
             $this->postMeta = new PostMeta();
         } elseif ($post instanceof Term) {
             $this->postMeta = new TermMeta();
-        } elseif ($post instanceof User) {
-            $this->postMeta = new UserMeta();
         }
 
         $this->postMeta->setConnection($post->getConnectionName());
@@ -82,8 +78,7 @@ abstract class BasicField
     public function fetchValue($field)
     {
         $postMeta = $this->postMeta->where(
-            $this->getKeyName(),
-            $this->post->getKey()
+           $this->getKeyName(), $this->post->getKey()
         )->where('meta_key', $field)->first();
 
         if (isset($postMeta->meta_value) and ! is_null($postMeta->meta_value)) {
@@ -156,8 +151,6 @@ abstract class BasicField
             return 'post_id';
         } elseif ($this->post instanceof Term) {
             return 'term_id';
-        } elseif ($this->post instanceof User) {
-            return 'user_id';
         }
     }
 

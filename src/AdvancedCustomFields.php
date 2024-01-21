@@ -4,7 +4,6 @@ namespace Corcel\Acf;
 
 use Corcel\Acf\Exception\MissingFieldNameException;
 use Corcel\Model;
-use Illuminate\Support\Str;
 
 /**
  * Class AdvancedCustomFields.
@@ -54,7 +53,7 @@ class AdvancedCustomFields
             throw new MissingFieldNameException('The field name is missing');
         }
 
-        $field = FieldFactory::make($arguments[0], $this->post, Str::snake($name));
+        $field = FieldFactory::make($arguments[0], $this->post, snake_case($name));
 
         return $field ? $field->get() : null;
     }
