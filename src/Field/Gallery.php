@@ -3,7 +3,7 @@
 namespace Corcel\Acf\Field;
 
 use Corcel\Acf\FieldInterface;
-use Corcel\Model\Post;
+use Corcel\Post;
 use Illuminate\Support\Collection;
 
 /**

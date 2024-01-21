@@ -2,11 +2,11 @@
 
 namespace Corcel\Acf\Field;
 
-use Corcel\Model\Post;
+use Corcel\Post;
 use Corcel\Model;
-use Corcel\Model\Meta\PostMeta;
-use Corcel\Model\Term;
-use Corcel\Model\Meta\TermMeta;
+use Corcel\PostMeta;
+use Corcel\Term;
+use Corcel\TermMeta;
 
 /**
  * Class BasicField.

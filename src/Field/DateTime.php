@@ -4,7 +4,7 @@ namespace Corcel\Acf\Field;
 
 use Carbon\Carbon;
 use Corcel\Acf\FieldInterface;
-use Corcel\Model\Post;
+use Corcel\Post;
 
 /**
  * Class DateTime.
